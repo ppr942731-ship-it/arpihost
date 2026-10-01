@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arpi Host — Publikasikan Kode Kamu dalam Detik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neon-green': '#39FF14',
+                        'brutal-purple': '#9D00FF',
+                        'brutal-pink': '#FF00C8',
+                        'brutal-yellow': '#FFE600',
+                        'brutal-cyan': '#00F0FF',
+                        'brutal-orange': '#FF6B00',
+                    },
+                    fontFamily: {
+                        'brutal': ['Space Mono', 'Courier New', 'monospace'],
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'brutal': '4px 4px 0px #000',
+                        'brutal-lg': '6px 6px 0px #000',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700;800&display=swap');
+        
+        .brutal-border { border: 3px solid #000; }
+        .brutal-border-thick { border: 5px solid #000; }
+        .grid-bg {
+            background-image: 
+                linear-gradient(rgba(157,0,255,0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(157,0,255,0.06) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .rainbow-text {
+            background: linear-gradient(90deg, #39FF14, #9D00FF, #FF00C8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .clay-card {
+            border-radius: 20px;
+            background: linear-gradient(145deg, #ffffff, #f3f4f6);
+            box-shadow: 8px 8px 16px rgba(0,0,0,0.1), -4px -4px 12px rgba(255,255,255,0.9);
+        }
+        .pulse-glow { animation: pulse-glow 2s infinite; }
+        @keyframes pulse-glow {
+            0%,100% { box-shadow: 0 0 5px #39FF14, 4px 4px 0 #000; }
+            50% { box-shadow: 0 0 20px #39FF14, 0 0 40px #9D00FF, 4px 4px 0 #000; }
+        }
+        .float { animation: float 3s ease-in-out infinite; }
+        @keyframes float {
+            0%,100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-white text-black font-sans grid-bg">
+
+    <!-- NAVBAR -->
+    <nav class="bg-black text-white">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold font-brutal">
+                <span class="text-neon-green">⚡ ARPI</span> HOST
+            </h1>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#fitur" class="hover:text-neon-green transition-colors">Fitur</a>
+                <a href="#cara" class="hover:text-neon-green transition-colors">Cara Pakai</a>
+                <a href="#deploy" class="bg-neon-green text-black px-4 py-2 brutal-border shadow-brutal font-bold hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">Mulai Sekarang</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="pt-16 pb-24 px-4">
+        <div class="container mx-auto max-w-6xl text-center">
+            <h2 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+                Publikasikan Website Kamu<br>
+                <span class="rainbow-text font-brutal">DALAM DETIK</span>
+            </h2>
+            <p class="text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto">
+                Cukup tempel kode HTML, klik deploy — langsung online di subdomain kamu sendiri.<br>
+                <code class="bg-brutal-yellow px-3 py-1 brutal-border font-bold text-lg mt-4 inline-block">web-proyek.arpihost.vercel.app</code>
+            </p>
+            <a href="#deploy" class="inline-block bg-black text-neon-green text-xl font-bold px-10 py-4 brutal-border-thick shadow-brutal-lg pulse-glow hover:bg-brutal-purple hover:text-white transition-all float">
+                🚀 DEPLOY SEKARANG →
+            </a>
+        </div>
+    </section>
+
+    <!-- FITUR SECTION -->
+    <section id="fitur" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h3 class="text-4xl font-bold text-center mb-16">Kenapa Pilih <span class="text-brutal-purple">Arpi Host</span>?</h3>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="clay-card p-8 brutal-border-thick">
+                    <div class="w-16 h-16 bg-neon-green text-black flex items-center justify-center text-2xl brutal-border mb-6">⚡</div>
+                    <h4 class="text-xl font-bold mb-3">Deploy Instan</h4>
+                    <p class="text-gray-600">Tidak perlu setup rumit. Tempel kode, klik satu tombol — langsung online dalam hitungan detik!</p>
+                </div>
+                
+                <div class="clay-card p-8 brutal-border-thick">
+                    <div class="w-16 h-16 bg-brutal-purple text-white flex items-center justify-center text-2xl brutal-border mb-6">🌐</div>
+                    <h4 class="text-xl font-bold mb-3">Subdomain Otomatis</h4>
+                    <p class="text-gray-600">Dapatkan link unik kamu: <br><code class="bg-brutal-yellow px-2 py-1 text-sm">nama.namamu.arpihost.vercel.app</code></p>
+                </div>
+                
+                <div class="clay-card p-8 brutal-border-thick">
+                    <div class="w-16 h-16 bg-brutal-pink text-white flex items-center justify-center text-2xl brutal-border mb-6">💯</div>
+                    <h4 class="text-xl font-bold mb-3">Gratis & Mudah</h4>
+                    <p class="text-gray-600">Tanpa biaya, tanpa registrasi. Cukup datang, tulis kode, dan bagikan ke dunia!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARA KERJA -->
+    <section id="cara" class="py-20">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h3 class="text-4xl font-bold text-center mb-16">3 Langkah <span class="text-neon-green">Mudah</span></h3>
+            
+            <div class="space-y-8">
+                <div class="flex items-start gap-6 clay-card p-6 brutal-border">
+                    <span class="text-4xl font-brutal text-brutal-orange font-bold">1</span>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Isi Nama Kamu</h4>
+                        <p class="text-gray-600">Tentukan nama website dan nama proyek kamu — ini jadi link unikmu!</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-6 clay-card p-6 brutal-border">
+                    <span class="text-4xl font-brutal text-brutal-purple font-bold">2</span>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Tempel Kode HTML</h4>
+                        <p class="text-gray-600">Salin kode website kamu, tempel di kolom yang disediakan — tidak ada batasan!</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-6 clay-card p-6 brutal-border">
+                    <span class="text-4xl font-brutal text-neon-green font-bold">3</span>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Klik Deploy & Bagikan</h4>
+                        <p class="text-gray-600">✅ Selesai! Website langsung online — salin linknya dan bagikan ke teman-teman!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPLOY FORM -->
+    <section id="deploy" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h3 class="text-4xl font-bold text-center mb-4">🚀 Mulai <span class="text-brutal-pink">Deploy</span></h3>
+            <p class="text-center text-gray-600 mb-12">Siap mempublikasikan karyamu? Isi di bawah ini!</p>
+            
+            <div class="clay-card p-8 md:p-10 brutal-border-thick relative">
+                <div class="absolute -top-3 -left-3 w-full h-full bg-brutal-purple/10 brutal-border -z-10 rounded-xl"></div>
+                
+                <div class="grid md:grid-cols-2 gap-4 mb-6">
+                    <div>
+                        <label class="block font-bold mb-2">🌐 Nama Website</label>
+                        <input type="text" id="webName" placeholder="contoh: web-porto" 
+                            class="w-full px-4 py-3 brutal-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brutal-purple">
+                    </div>
+                    <div>
+                        <label class="block font-bold mb-2">📁 Nama Proyek</label>
+                        <input type="text" id="projectName" placeholder="contoh: arpihost" 
+                            class="w-full px-4 py-3 brutal-border rounded-lg focus:outline-none focus:ring-2 focus:ring-neon-green">
+                    </div>
+                </div>
+
+                <div class="mb-2 font-bold">💻 Kode HTML</div>
+                <textarea id="htmlCode" rows="12" placeholder="Tempel kode HTML kamu di sini..."
+                    class="w-full px-4 py-3 brutal-border rounded-lg font-mono text-sm mb-6 focus:outline-none focus:ring-2 focus:ring-brutal-pink"></textarea>
+
+                <button id="deployBtn" 
+                    class="w-full py-4 bg-black text-neon-green text-xl font-bold brutal-border-thick shadow-brutal-lg pulse-glow hover:bg-brutal-purple hover:text-white transition-all">
+                    🚀 DEPLOY SEKARANG →
+                </button>
+
+                <!-- Hasil Deploy -->
+                <div id="resultArea" class="hidden mt-8 p-6 bg-neon-green/10 brutal-border rounded-lg">
+                    <h4 class="text-xl font-bold text-neon-green mb-3">✅ DEPLOY BERHASIL!</h4>
+                    <p class="mb-2">Website kamu aktif di:</p>
+                    <div class="bg-white p-3 brutal-border font-bold text-lg mb-4 break-all" id="resultUrl"></div>
+                    <div class="flex flex-wrap gap-3">
+                        <button id="copyUrl" class="px-4 py-2 bg-brutal-cyan text-black brutal-border shadow-brutal font-bold hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+                            <i class="fa fa-copy"></i> Salin URL
+                        </button>
+                        <button id="openUrl" class="px-4 py-2 bg-neon-green text-black brutal-border shadow-brutal font-bold hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+                            <i class="fa fa-external-link"></i> Buka Website
+                        </button>
+                        <button id="shareWA" class="px-4 py-2 bg-green-600 text-white brutal-border shadow-brutal font-bold hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+                            <i class="fa fa-whatsapp"></i> Bagikan WA
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h4 class="text-2xl font-bold font-brutal mb-4"><span class="text-neon-green">⚡ ARPI</span> HOST</h4>
+            <p class="text-gray-400 mb-6">Publikasikan kode kamu, dalam hitungan detik.</p>
+            <p class="text-sm text-gray-500">Format: <code class="text-brutal-cyan">web-name.project-name.arpihost.vercel.app</code></p>
+            <p class="mt-6 text-xs text-gray-600">© 2026 Arpi Host — Dibuat dengan 💚</p>
+        </div>
+    </footer>
+
+    <script>
+        const API_URL = '/api/deploy';
+        let deployedUrl = '';
+
+        document.getElementById('deployBtn').onclick = async function() {
+            const webName = document.getElementById('webName').value.trim();
+            const projectName = document.getElementById('projectName').value.trim();
+            const html = document.getElementById('htmlCode').value;
+
+            if (!webName || !projectName || !html) {
+                alert('❌ Lengkapi semua data dulu!');
+                return;
+            }
+
+            this.disabled = true;
+            this.innerHTML = '⏳ SEDANG DEPLOY...';
+
+            try {
+                const res = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ webName, projectName, html })
+                });
+
+                const data = await res.json();
+
+                if (!res.ok) throw new Error(data.error || 'Gagal deploy');
+
+                deployedUrl = `https://${data.url}`;
+                document.getElementById('resultUrl').textContent = deployedUrl;
+                document.getElementById('resultArea').classList.remove('hidden');
+                document.getElementById('resultArea').scrollIntoView({ behavior: 'smooth' });
+                
+                alert(`✅ BERHASIL!\n\n${deployedUrl}`);
+            } catch (err) {
+                alert(`❌ ${err.message}`);
+            } finally {
+                this.disabled = false;
+                this.innerHTML = '🚀 DEPLOY SEKARANG →';
+            }
+        };
+
+        document.getElementById('copyUrl').onclick = () => {
+            navigator.clipboard.writeText(deployedUrl);
+            alert('✅ Disalin!');
+        };
+        document.getElementById('openUrl').onclick = () => window.open(deployedUrl, '_blank');
+        document.getElementById('shareWA').onclick = () => {
+            window.open(`https://wa.me/?text=${encodeURIComponent('🔥 Lihat website saya di Arpi Host!\n\n' + deployedUrl)}`, '_blank');
+        };
+    </script>
+</body>
+</html>
