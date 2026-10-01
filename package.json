@@ -1,0 +1,8 @@
+{
+  "name": "arpi-host",
+  "version": "1.0.0",
+  "description": "Arpi Host — Publikasikan Kode Kamu dalam Detik",
+  "dependencies": {
+    "@vercel/kv": "^1.0.1"
+  }
+}
