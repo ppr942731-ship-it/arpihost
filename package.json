@@ -2,6 +2,9 @@
   "name": "arpi-host",
   "version": "1.0.0",
   "description": "Arpi Host — Publikasikan Kode Kamu dalam Detik",
+  "keywords": ["hosting", "html", "deploy"],
+  "author": "Arpi",
+  "license": "MIT",
   "dependencies": {
     "@vercel/kv": "^1.0.1"
   }
